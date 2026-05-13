@@ -135,3 +135,8 @@ class LoginSerializer(serializers.Serializer):
 
 		attrs['user'] = user
 		return attrs
+
+
+class Login2FAVerifySerializer(serializers.Serializer):
+	login_session = serializers.CharField()
+	code = serializers.CharField(min_length=6, max_length=6)
